@@ -2,13 +2,84 @@ body{
     background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
 
 }
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -50px;
+    align-items: center;
+}
 .input{
-    width: 1440px;
+    width: 1330px;
     height: 70px;
     background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
     border: none;
     border-radius: 50px;
 }
 .card{
+    height: 136.86px;
+    width: 352px;
+    background-color: #F6F7F9;
+    border-radius: 8px;
+
+}
+.card_div1{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-left: 20px;
     
+}
+.poder{
+    display: flex;
+    gap: 30px;
+    margin-left: 10px;
+    
+}
+.poder p{
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 30px;
+}
+.poder_title{
+    display: flex;
+    gap: 15px;
+    margin-top: -10px;
+
+}
+
+.atributo{
+    display: flex;
+    gap: 15px;
+    margin-left: 10px;
+    margin-top: -15px;
+}
+.atributo1{
+    height: 23px;
+    width: 60px;
+    border-radius: 15px;
+    background-color: aqua;
+}
+.atributo2{
+    height: 23px;
+    width: 60px;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
+.poke_div{
+    display: flex;
+    /* justify-content: flex-end; */
+    z-index: 1px;
+    width: 187px;
+    height: 100%;
+    background: linear-gradient(270deg, #5BC7FA 0.15%, #35BAFF 100%);
+    
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /* margin-right: 50px; */
+
+
+}
+.poke_div img{
+    margin-left: 10px;
 }
