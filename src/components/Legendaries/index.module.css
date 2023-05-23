@@ -1,0 +1,14 @@
+body{
+    background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
+
+}
+.input{
+    width: 1440px;
+    height: 70px;
+    background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
+    border: none;
+    border-radius: 50px;
+}
+.card{
+    
+}
