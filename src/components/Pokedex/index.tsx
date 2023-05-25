@@ -1,16 +1,8 @@
-import { PokemonCard } from "../PokemonCard";
 import style from '../Pokedex/index.module.css';
 import { useEffect, useState } from "react";
-import axios from 'axios';
-import { Grid } from '@mui/material';
 import { Header } from "../Header";
 import { api } from "../../api/api";
-import circle from '../../assets/Ellipse 6.svg';
 
-type PokemonCardProps = {
-    name: any,
-    types: any
-} 
 
 
 type PokemonType = {
@@ -36,7 +28,7 @@ type Request = {
     attack: number
     defense: number
 }
-
+export type typePokemon = 'stile' | 'dark' | 'rock' | 'grass' | 'bug' | 'ice' | 'water' | 'fire' | 'fighting' | 'dragon' | 'normal' | 'gosth' | 'poison' | 'psychic' | 'fairy' | 'ghost' | 'ground' | 'electric' | 'flying';
 
 
 export const Pokedex = () => {
@@ -90,146 +82,80 @@ export const Pokedex = () => {
         }
     }
 
-    // const [pokemons, setPokemons] = useState([]);
-    // useEffect(() => {
-    //     getPokemons();
-    // }, [])
+    const [quantidadePokemons, setQuantidadePokemons] = useState<number>(0);
 
-    // const getPokemons = () => {
-    //     axios.get("https://pokeapi.co/api/v2/pokemon?limit=10")
-    //     .then((res) => setPokemons(res.data.results))
-    //     .catch((err) => console.log(err))
+    useEffect(() => {
+        async function buscarTodosPokemons() {
+            const response = await api.get('https://pokeapi.co/api/v2/pokemon')
+            console.log(response.data)
+            setQuantidadePokemons(response.data.count);
+
+        }
+        buscarTodosPokemons()
+    }, [])
 
 
-    //     console.log(pokemons)
-    // }
+
+    const colorAtributesAndBackGround: Record<typePokemon, string> = {
+        fighting: '#F76745',
+        dragon: '#F76745',
+        normal: '#76AADB',
+        gosth: '#76AADB',
+        poison: '#A974BC',
+        psychic: '#A974BC',
+        fairy: '#A974BC',
+        ghost: '#A974BC',
+        ground: '#9B597B',
+        electric: '#F7C545',
+        stile: '#A1A1A1',
+        dark: '#A1A1A1',
+        rock: '#A1A1A1',
+        grass: '#70A83B',
+        bug: '#70A83B',
+        ice: '#A2CFF0',
+        water: '#A2CFF0',
+        fire: '#F76745',
+        flying: '#A890F0'
+    }
 
     return(
         <>
-            <Header></Header>  
+            <Header></Header>
             <article className={style.top}>
-                <h1>800 <strong>Pokemons</strong> for you choose your favorite</h1>
-                <input className={style.input} type="text" placeholder="       Encuentra tu pokèmon..."/>
+               <h1>{quantidadePokemons} <strong>Pokemons</strong> for you choose your favorite</h1>
+               <input className={style.input} type="text" placeholder="       Encuentra tu pokèmon..."/>
                 <button className={style.button}>Tipo</button>
             </article>
-            {pokemons.map((pokemon) => (
-                // return <PokemonCard name={pokemon.name} types={pokemon.types} attack={pokemon.attack}/>
-                <section className={style.section}>
-                
-                <article className={style.card}>
-                
-                    <div>
-                        <div className={style.card_div1}>
-                             
-                            <h4>{pokemon.name}</h4>
-                            <div className={style.poder}> 
-                            <img src={circle} alt="" />
-                                <p>{pokemon.attack}</p>
-                            <img src={circle} alt="" />
-                            
-                                <p>{pokemon.defense}</p>
-                            
-                            </div>
-                            <div className={style.poder_title}>
-                                <p>Attack</p>
-                                <p>Defense</p>
-                            </div>
-                            {/* <div className={style.atributo}>
-                                <p className={style.atributo1}>nome</p>
-                                <p className={style.atributo2}>nome</p>
-                            </div > */}
+        <section className={style.section_container_aling}>
+            <section className={style.section_container_grid}>
+                {pokemons.map((pok) => (
+                    <article key={pok.id} className={style.article_cards_container}>
+                        <article className={style.article_content}>
+                            <h1>{pok.name}</h1>
+                            <article className={style.article_atributos_container}>
+                                <div className={style.div_circles_container}>
+                                    <div className={style.atribute_container}>{pok.attack}</div>
+                                    <div className={style.atribute_container} >{pok.defense}</div>
+                                </div>
+                                <div className={style.attack_and_defense}>
+                                    <p>Attack</p>
+                                    <p>Defense</p>
+                                </div>
+                            </article>
                             <div className={style.atributo}>
-                                {pokemon.types.map((element: any) => <p className={style.atributo2}>{element.type.name}</p>)}
-                               
+                                <div className={style.atributo}>{pok.types.map((element: any) => <p className={style.atributo1}>{element.type.name}</p>)}</div>
                             </div>
-                        </div>
-                        <div className={style.poke_div}>
-                            <img src={pokemon.image}alt="" />
-                        </div>
-                    </div>
-                </article>
+                         
+                        </article>
+                    
+                        <article className={style.article_img}>
+                                 <img src={pok.image} alt="Imagem do card" className={style.img_pokemon} />
+                             </article>
+                    </article>
+                ))}
             </section>
-            ))}
-        </>
+            {<button className={style.load_more_poks}>Carregar mais</button>}
+        </section>
+    </>
     )
 } 
-// import React from "react";
-// import styles from "./styles.module.css";
-// import CardPokemon from "../CardPokemon";
-// import InputPokemon from "../InputPokemon";
-// import { getPokemon, orderPokemons } from '../../Utils/Util';
-
-// const SearchPokemons = () => {
-//   document.querySelector("body").className = "normal";
-
-//   const [pokemons, setPokemons] = React.useState([]);
-//   const [urlList, setUrlList] = React.useState([]);
-//   const [pages, setPages] = React.useState(
-//     "https://pokeapi.co/api/v2/pokemon?limit=9&offset=0",
-//   );
-//   const [next, setNext] = React.useState(null);
-//   const [infinite, setInfinite] = React.useState(true);
-
-//   React.useEffect(() => {
-//     fetch(pages)
-//       .then((response) => response.json())
-//       .then((json) => {
-//         setUrlList(json.results.map((result) => result.url));
-//         setNext(json.next);
-//       });
-//   }, [pages]);
-
-//   React.useEffect(() => {
-//     urlList.map((url) =>
-//       fetch(url)
-//         .then((response) => response.json())
-//         .then((json) =>
-//           setPokemons((pokemons) => [...pokemons, getPokemon(json)]),
-//         ),
-//     );
-//   }, [urlList]);
-
-//   React.useEffect(() => {
-//     let wait = false;
-//     function infiniteScroll() {
-//       if (infinite) {
-//         const scroll = window.scrollY;
-//         const height = document.body.offsetHeight - window.innerHeight;
-//         if (scroll > height * 0.7 && !wait) {
-//           wait = true;
-//           // console.log("Inifite status:", infinite);
-//           // console.log("Next:", next);
-//           setPages(next);
-//           setTimeout(() => {
-//             wait = false;
-//           }, 2500);
-//         }
-//       }
-//     }
-
-//     window.addEventListener("wheel", infiniteScroll);
-//     window.addEventListener("scroll", infiniteScroll);
-//     return () => {
-//       window.removeEventListener("wheel", infiniteScroll);
-//       window.removeEventListener("scroll", infiniteScroll);
-//     };
-//   }, [infinite, next]);
-
-//   return (
-//     <main className={styles.main}>
-//       <div className={styles.container}>
-//         <h3 className={styles.title}>
-//           890 <span>Pokemons</span> for you to choose your favorite
-//         </h3>
-//         <InputPokemon
-//           setUrlList={setUrlList}
-//           setPokemons={setPokemons}
-//           setInfinite={setInfinite}
-//         />
-//         {pokemons && <CardPokemon pokemons={pokemons.sort(orderPokemons)} />}
-//       </div>
-//     </main>
-//   );
-// };
-
-// export default SearchPokemons;
