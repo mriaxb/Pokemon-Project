@@ -1,41 +1,159 @@
-import { Dropdown } from "reactstrap"
-import Poke from '../../assets/image 1.svg';
 import style from '../Legendaries/index.module.css';
+import { Header } from '../Header';
 
-export const Legendaries = () => {
-    return(
-        <>
-            <section className={style.section}>
-                <article className={style.top}>
-                    <h1>800 <strong>Pokemons</strong> for you choose your favorite</h1>
-                    <input className={style.input} type="text" placeholder="Encuentra tu pokèmon..."/>
-                    <button>Tipo</button>
-                </article>
-                <article className={style.card}>
+export default function Legendaries() {
+  // const error = useRouteError() as ErrorResponse;
+  // console.error(error);
+  
+  return (
+    <div className={style.section} >
+        <Header></Header>
+        <article>
+
+            <article className={style.page}>
+                <h1>Legendaries <hr /></h1>
+            </article>
+            <article className={style.div_esq}>
+                <img src="" alt="" />
+            </article>
+            <article className={style.div_dir}>
+                <h2>Nome</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore repellendus voluptatibus, alias laboriosam velit recusandae? Qui, ab in similique cum nostrum magnam, quae quibusdam magni distinctio repellat consectetur officia?</p>
+                <article>
                     <div>
-                        <div className={style.card_div1}>
-                            <h4>Nome</h4>
-                            <div className={style.poder}> 
-                                <p>419</p>
-                                <p>49</p>
-                            
-                            </div>
-                            <div className={style.poder_title}>
-                                <p>Attack</p>
-                                <p>Defense</p>
-                            </div>
-                            <div className={style.atributo}>
-                                <p className={style.atributo1}>Grass</p>
-                                <p className={style.atributo2}>Poison</p>
-                            </div>
-                        </div>
-                        <div className={style.poke_div}>
-                            <img src={Poke} alt="" />
-                        </div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
                     </div>
                 </article>
-            </section>
-        </>
-        
-    )
+                <article>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                </article>
+            </article>
+            <article>
+                <div>
+                    <img src="" alt="" />
+                    <p>Nome</p>
+                </div>
+            </article>
+        </article>
+
+
+        <article>
+
+            <article>
+                <h1>Stronger <hr /></h1>
+            </article>
+            <article>
+                <img src="" alt="" />
+            </article>
+            <article>
+                <h2>Nome</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore repellendus voluptatibus, alias laboriosam velit recusandae? Qui, ab in similique cum nostrum magnam, quae quibusdam magni distinctio repellat consectetur officia?</p>
+                <article>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                </article>
+            </article>
+            <article>
+                <div>
+                    <img src="" alt="" />
+                    <p>Nome</p>
+                </div>
+            </article>
+        </article>
+
+
+        <article>
+
+            <article>
+                <h1>Legendaries <hr /></h1>
+            </article>
+            <article>
+                <img src="" alt="" />
+            </article>
+            <article>
+                <h2>Nome</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore repellendus voluptatibus, alias laboriosam velit recusandae? Qui, ab in similique cum nostrum magnam, quae quibusdam magni distinctio repellat consectetur officia?</p>
+                <article>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                </article>
+                <article>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                    <div>
+                        <p>Healthy Pont</p>
+                        <p>00000,000</p>
+                    </div>
+                </article>
+            </article>
+            <article>
+                <div>
+                    <img src="" alt="" />
+                    <p>Nome</p>
+                </div>
+            </article>
+        </article>
+
+    </div>
+  );
 }

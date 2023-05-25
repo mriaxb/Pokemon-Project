@@ -6,23 +6,20 @@ import { Home } from '../Home/index';
 export const Header = () => {
     return(
         <section className={style.header}>
-            <article>
+            <article className={style.logo}>
                 <img src={ Logo } alt="Logo Pokemon" />
             </article>
             <article className={style.header_rotas}>
-            
-                {/* <Router>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        
-                    </Routes>
-                
-                </Router> */}
+        
                 <a href="/">Home</a>
-
                 <a href="/pokedex">Pokédex</a>
                 <a href="/legendaries">Legendaries</a>
-                <a href="">Documentation</a>
+                <a href="https://pokeapi.co/docs/v2">Documentation</a>
+
+                {/* <Link to={'/'}>Home</Link>
+                <Link to={'/pokedex'}>Pokédex</Link>
+                <Link to={'/legendaries'}>Legendaries</Link>
+                <a href="https://pokeapi.co/docs/v2">Documentation</a> */}
             </article>
         </section>
     )

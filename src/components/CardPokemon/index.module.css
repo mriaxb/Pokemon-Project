@@ -1,0 +1,17 @@
+.cardContainer {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
+  }
+  
+  /* Smartphone */
+  @media (max-width: 755px) {
+    .cardContainer {
+      flex-direction: column;
+    }
+  }
+  

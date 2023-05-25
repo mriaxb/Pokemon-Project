@@ -6,8 +6,15 @@
   font-weight: 400;
 
   --amarelo: #F5DB13; 
-  --black:#000000;
-  --verde--claro:#73D677;
+  --preto:#000000;
+  --verde:#73D677;
+  --dark--gray: #212121;
+  --azul:linear-gradient(270deg, #5BC7FA 0.15%, #35BAFF 100%);
+  --azul--claro:#07D6F2;
+  --vermelho: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+  --rosa: #F4B5C1;
+  --gray--gradient:linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
+
 
   width: 100%;
   height: 100vh;

@@ -1,0 +1,66 @@
+.form {
+    position: relative;
+  }
+  
+  .search {
+    width: 100%;
+    border-radius: 40px;
+    background: #f2f2f2;
+    font-size: 16px;
+    line-height: 20.11px;
+    padding: 16px 32px;
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+    outline: transparent;
+    border: 2px solid transparent;
+    transition: 0.4s ease-in-out;
+    margin: 34px 0;
+  }
+  
+  .search::placeholder {
+    color: rgba(33, 33, 33, 0.3);
+    font-weight: 400;
+  }
+  
+  .search:focus,
+  .search:hover {
+    border: 2px solid #f5db13;
+  }
+  
+  .button {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 44px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    border: 2px solid transparent;
+    transition: 0.4s ease-in-out;
+    border-radius: 6px;
+  }
+  
+  .button:focus,
+  .button:hover {
+    border-radius: 6px;
+    outline: none;
+    border: 2px solid #f5db13;
+  }
+  
+  .option {
+    border: 2px solid #f5db13;
+  }
+  
+  /* Smartphone */
+  @media (max-width: 755px) {
+    .search {
+      /* font-size: 12px;
+      line-height: 15.08px; */
+      padding: 9px 16px;
+    }
+    .button {
+      right: 10px;
+      top: 37px;
+    }
+  }
+  
