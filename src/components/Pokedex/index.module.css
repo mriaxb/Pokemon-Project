@@ -76,7 +76,7 @@
     padding: 5px;
     margin-right: 50px;
 }
-.section_container_aling {
+.section_container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +86,7 @@
     padding-bottom: 20px;
 }
 
-.section_container_grid {
+.section_org {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +102,11 @@
     gap: 25px;
 }
 
-.article_cards_container {
+.card_container:hover{
+    margin-bottom: 15px;
+    filter: drop-shadow(10px 10px 10px rgba(33, 33, 33, 0.1));
+}
+.card_container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +116,7 @@
     background-color: white;
 }
 
-.article_content {
+.cards {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -125,36 +129,39 @@
     padding-top: 3px;
     gap: 17px;
 
+    cursor: pointer;
+
     border-radius: 8px 0px 0px 8px;
     filter: drop-shadow(4px 4px 4px rgba(33, 33, 33, 0.1));
 
     background-color: #F6F7F9;
 }
 
-.article_content h1{
+.cards h1{
     font-family: 'Karla';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;
 
+    cursor: pointer;
     text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
 
     color: var(--dark);
 }
 
-.article_content h1::first-letter {
+.cards h1::first-letter {
     text-transform: uppercase;
 }
 
-.article_atributos_container {
+.atributos_container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.div_circles_container {
+.circles {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,7 +170,7 @@
     gap: 20px;
 }
 
-.atribute_container {
+.atributos {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -183,28 +190,7 @@
     gap: 10px;
 }
 
-.div_container_buttons button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
-    border-radius: 11px;
-    border: none;
-
-    width: 72px;
-    height: 18px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 14px;
-    text-align: center;
-    color: var(--dark);
-}
-
-.attack_and_defense {
+.poder {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,7 +208,8 @@
     color: #4B4B4B;
 }
 
-.article_img {
+.container_img_pokemon {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,7 +229,7 @@
     margin-bottom: 15%;
 }
 
-.load_more_poks {
+.carregar_mais {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -265,7 +252,7 @@
     border-radius: 11px;
 }
 
-.load_more_poks:hover {
+.carregar_mais:hover {
     filter: brightness(1.25);
 }
 

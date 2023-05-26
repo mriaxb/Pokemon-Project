@@ -36,7 +36,7 @@ export const Pokedex = () => {
  
 
     useEffect(() => {
-        async function getAllPokemons() {
+        async function getPokemons() {
             const response = await api.get('/pokemon/?limit=9')
             const { results } = response.data;
 
@@ -66,7 +66,7 @@ export const Pokedex = () => {
             console.log(payloadPokemons)
             
         }
-        getAllPokemons()
+        getPokemons()
     }, [])
 
     async function getMoreInfo(url: string): Promise<Request> {
@@ -85,13 +85,13 @@ export const Pokedex = () => {
     const [quantidadePokemons, setQuantidadePokemons] = useState<number>(0);
 
     useEffect(() => {
-        async function buscarTodosPokemons() {
+        async function getAllPokemons() {
             const response = await api.get('https://pokeapi.co/api/v2/pokemon')
             console.log(response.data)
             setQuantidadePokemons(response.data.count);
 
         }
-        buscarTodosPokemons()
+        getAllPokemons()
     }, [])
 
 
@@ -126,35 +126,35 @@ export const Pokedex = () => {
                <input className={style.input} type="text" placeholder="       Encuentra tu pokèmon..."/>
                 <button className={style.button}>Tipo</button>
             </article>
-        <section className={style.section_container_aling}>
-            <section className={style.section_container_grid}>
-                {pokemons.map((pok) => (
-                    <article key={pok.id} className={style.article_cards_container}>
-                        <article className={style.article_content}>
-                            <h1>{pok.name}</h1>
-                            <article className={style.article_atributos_container}>
-                                <div className={style.div_circles_container}>
-                                    <div className={style.atribute_container}>{pok.attack}</div>
-                                    <div className={style.atribute_container} >{pok.defense}</div>
+        <section className={style.section_container}>
+            <section className={style.section_org}>
+                {pokemons.map((pokemon) => (
+                    <article key={pokemon.id} className={style.card_container}>
+                        <article className={style.cards}>
+                            <h1>{pokemon.name}</h1>
+                            <article className={style.atributos_container}>
+                                <div className={style.circles}>
+                                    <div className={style.atributos}>{pokemon.attack}</div>
+                                    <div className={style.atributos} >{pokemon.defense}</div>
                                 </div>
-                                <div className={style.attack_and_defense}>
+                                <div className={style.poder}>
                                     <p>Attack</p>
                                     <p>Defense</p>
                                 </div>
                             </article>
                             <div className={style.atributo}>
-                                <div className={style.atributo}>{pok.types.map((element: any) => <p className={style.atributo1}>{element.type.name}</p>)}</div>
+                                <div className={style.atributo}>{pokemon.types.map((element: any) => <p className={style.atributo1}>{element.type.name}</p>)}</div>
                             </div>
                          
                         </article>
                     
-                        <article className={style.article_img}>
-                                 <img src={pok.image} alt="Imagem do card" className={style.img_pokemon} />
+                        <article className={style.container_img_pokemon}>
+                                 <img src={pokemon.image} alt="Imagem do pokemon" className={style.img_pokemon} />
                              </article>
                     </article>
                 ))}
             </section>
-            {<button className={style.load_more_poks}>Carregar mais</button>}
+            {<button className={style.carregar_mais}>Carregar mais</button>}
         </section>
     </>
     )

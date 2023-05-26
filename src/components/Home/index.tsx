@@ -74,7 +74,7 @@ export const Home = () => {
                 <p className={style.paragrafo}>
                     You can know the type of Pokemon, its strengths, disadvantages and abilities
                 </p>
-                <Link to={'/pokemons'}>
+                <Link to={'/pokedex'}>
                     <button className={style.button1}>
                         See pokemons
                         
