@@ -1,15 +1,14 @@
-import { useRouteError } from "react-router-dom";
 import erroft from '../../assets/404.svg';
 import team from '../../assets/Team_Rocket_trio_OS 1.svg';
 import { Link } from 'react-router-dom';
 import style from '../NotFound/index.module.css';
 
-type ErrorResponse = {
-    data: any;
-    status: number;
-    statusText: string;
-    message?: string;
-};
+// type ErrorResponse = {
+//     data: any;
+//     status: number;
+//     statusText: string;
+//     message?: string;
+// };
 
 export default function NotFound() {
   // const error = useRouteError() as ErrorResponse;

@@ -1,7 +1,6 @@
 import style from '../Header/index.module.css';
 import Logo from '../../assets/Logo.svg';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Home } from '../Home/index';
+
 
 export const Header = () => {
     return(
